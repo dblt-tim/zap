@@ -42,7 +42,17 @@ impl ApplicationHandler<State> for App {
         match event {
             WE::CloseRequested => event_loop.exit(),
             WE::Resized(size) => state.resize(size.width, size.height),
-            WE::RedrawRequested => { state.render(); },
+            WE::RedrawRequested => { 
+                state.update();
+                
+                match state.render() {
+                    Ok(_) => {},
+                    Err(e) => {
+                        log::error!("{e}");
+                        event_loop.exit();
+                    }
+                } 
+            },
             WE::KeyboardInput { 
                 event: KeyEvent {
                     physical_key: PhysicalKey::Code(code),

@@ -1,7 +1,8 @@
 
 pub mod app;
-pub mod window;
 
 mod state;
+
+mod rendering;
 
 pub use app::App;
