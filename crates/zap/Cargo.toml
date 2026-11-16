@@ -1,0 +1,10 @@
+[package]
+name = "zap"
+
+edition.workspace = true
+version.workspace = true
+
+[dependencies]
+zap_core = { workspace = true }
+zap_math = { workspace = true }
+zap_render = { workspace = true }

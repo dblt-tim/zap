@@ -1,12 +1,25 @@
-[package]
-name = "zap"
-version = "0.1.0"
-edition = "2024"
+[workspace]
+resolver = "2"
+members = [
+    "crates/zap",
+    "sandbox",
 
-[dependencies]
+    "crates/zap_core",
+    "crates/zap_render",
+    "crates/zap_math"
+]
+
+[workspace.package]
+edition = "2024"
+version = "0.1.0"
+
+[workspace.dependencies]
+zap = { path = "crates/zap" }
+zap_core = { path = "crates/zap_core" }
+zap_render = { path = "crates/zap_render" }
+zap_math = { path = "crates/zap_math" }
+
 anyhow = "1.0.104"
 env_logger = "0.11.11"
 log = "0.4.35"
-pollster = "1.0.1"
-wgpu = "30.0.1"
-winit = {version="0.30.13", features=["android-native-activity"]}
+winit = "0.30.13"

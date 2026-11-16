@@ -1,0 +1,9 @@
+[package]
+name = "sandbox"
+edition.workspace = true
+version.workspace = true
+
+[dependencies]
+zap = { workspace = true }
+
+anyhow = { workspace = true }
