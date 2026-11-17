@@ -5,3 +5,9 @@ edition.workspace = true
 version.workspace = true
 
 [dependencies]
+zap_core = { workspace = true }
+
+wgpu = { workspace = true }
+winit = { workspace = true }
+anyhow = { workspace = true }
+glam = { workspace = true }

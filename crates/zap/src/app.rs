@@ -1,10 +1,10 @@
 use anyhow::Result;
 use winit::event_loop::EventLoop;
 
-use crate::{Context, LevelLoader};
+use crate::{Context};
 
 pub trait App {
-    fn setup(ctx: &mut Context) -> LevelLoader;
+    fn setup(ctx: &mut Context);
 }
 
 pub enum WindowState {
@@ -22,9 +22,7 @@ pub fn run<A: App>(_config: AppConfig) -> Result<()> {
 
     let mut ctx = Context::new();
 
-    match A::setup(&mut ctx) {
-        LevelLoader::FromFunc(f) => ctx.set_level(f()),
-    }
+    A::setup(&mut ctx);
 
     let event_loop = EventLoop::with_user_event().build()?;
     event_loop.run_app(&mut ctx)?;

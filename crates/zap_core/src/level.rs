@@ -1,6 +1,12 @@
 
-pub struct Level;
+pub struct LevelObject;
 
-pub enum LevelLoader {
-    FromFunc(fn() -> Level),
+
+pub struct Level {
+    
+}
+impl Level {
+    pub fn new() -> Self {
+        Self {}
+    }
 }

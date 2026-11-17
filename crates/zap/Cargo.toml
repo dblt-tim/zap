@@ -6,5 +6,11 @@ version.workspace = true
 
 [dependencies]
 zap_core = { workspace = true }
-zap_math = { workspace = true }
 zap_render = { workspace = true }
+zap_ecs = { workspace = true }
+
+env_logger = { workspace = true }
+anyhow = { workspace = true }
+winit = { workspace = true }
+pollster = { workspace = true }
+log = { workspace = true }

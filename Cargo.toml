@@ -6,7 +6,7 @@ members = [
 
     "crates/zap_core",
     "crates/zap_render",
-    "crates/zap_math"
+    "crates/zap_ecs"
 ]
 
 [workspace.package]
@@ -17,9 +17,12 @@ version = "0.1.0"
 zap = { path = "crates/zap" }
 zap_core = { path = "crates/zap_core" }
 zap_render = { path = "crates/zap_render" }
-zap_math = { path = "crates/zap_math" }
+zap_ecs = { path = "crates/zap_ecs" }
 
 anyhow = "1.0.104"
 env_logger = "0.11.11"
 log = "0.4.35"
 winit = "0.30.13"
+pollster = "1.0.1"
+wgpu = "30.0.2"
+glam = "0.34.3"

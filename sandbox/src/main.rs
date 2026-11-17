@@ -1,20 +1,10 @@
-
-extern crate zap;
-use zap::*;
-
 use anyhow::Result;
+use zap::*;
 
 struct Sandbox;
 
-fn level() -> Level {
-    let l = Level;
-    return l;
-}
-
 impl App for Sandbox {
-    fn setup(_ctx: &mut Context) -> LevelLoader {
-        return LevelLoader::FromFunc(level);
-    }
+    fn setup(_ctx: &mut Context) {}
 }
 
 fn main() -> Result<()> {

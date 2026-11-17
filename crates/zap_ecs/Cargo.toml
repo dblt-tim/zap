@@ -1,0 +1,5 @@
+[package]
+name = "zap_ecs"
+
+edition.workspace = true
+version.workspace = true
