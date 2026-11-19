@@ -1,10 +1,5 @@
-
-mod world;
 mod component;
 mod entity;
+mod world;
 
-pub use {
-    world::World,
-    component::Component,
-    entity::Entity
-};
+pub use {component::Component, entity::Entity, world::World};

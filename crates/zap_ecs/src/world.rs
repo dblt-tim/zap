@@ -1,21 +1,20 @@
-
 use std::any::TypeId;
 use std::collections::HashMap;
 
 use crate::{
+    component::{AnyStorage, Component, Storage},
     entity::{Entities, Entity, EntityBuilder},
-    component::{Storage, AnyStorage, Component},
 };
 
 pub struct World {
     entities: Entities,
-    storages: HashMap<TypeId, Box<dyn AnyStorage>>
+    storages: HashMap<TypeId, Box<dyn AnyStorage>>,
 }
 impl World {
     pub fn new() -> Self {
         Self {
             entities: Entities::new(),
-            storages: HashMap::new()
+            storages: HashMap::new(),
         }
     }
 

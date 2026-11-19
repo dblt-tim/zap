@@ -1,7 +1,7 @@
 use anyhow::Result;
 use winit::event_loop::EventLoop;
 
-use crate::{Context};
+use zap_core::Context;
 
 pub trait App {
     fn setup(ctx: &mut Context);

@@ -1,6 +1,6 @@
 // the base entity system
 
-use crate::{world::World, component::Component};
+use crate::{component::Component, world::World};
 
 // each entity holds an index for components
 // recycled handles are distinguishable using generation variable
@@ -60,14 +60,15 @@ impl Entities {
 }
 
 pub struct EntityBuilder<'w> {
-    world: &'w mut World, entity: Entity
+    world: &'w mut World,
+    entity: Entity,
 }
 impl<'w> EntityBuilder<'w> {
     pub(crate) fn new(world: &'w mut World, entity: Entity) -> Self {
-        Self{world, entity}
+        Self { world, entity }
     }
     pub fn with<T: Component>(self, value: T) -> Self {
-        self.world.attach_component(self.entity, value);
+        self.world.attach_component::<T>(self.entity, value);
         self
     }
     pub fn done(self) -> Entity {

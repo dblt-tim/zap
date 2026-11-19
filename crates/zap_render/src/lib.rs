@@ -13,6 +13,9 @@ use surface::*;
 mod device;
 use device::*;
 
+mod components;
+use components::*;
+
 pub struct Renderer {
     window: Arc<Window>,
 

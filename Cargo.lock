@@ -2716,6 +2716,8 @@ dependencies = [
  "log",
  "pollster",
  "winit",
+ "zap_ecs",
+ "zap_render",
 ]
 
 [[package]]
@@ -2730,7 +2732,6 @@ dependencies = [
  "glam",
  "wgpu",
  "winit",
- "zap_core",
 ]
 
 [[package]]

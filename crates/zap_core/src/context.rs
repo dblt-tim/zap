@@ -1,7 +1,7 @@
 use std::sync::Arc;
 
-use crate::ecs::World;
-use crate::render::Renderer;
+use zap_ecs::World;
+use zap_render::Renderer;
 
 use winit::{
     application::ApplicationHandler,
@@ -12,14 +12,13 @@ use winit::{
 
 pub struct Context {
     renderer: Option<Renderer>,
-    #[allow(unused)]
-    world: World,
+    pub world: World,
 }
 impl Context {
     pub fn new() -> Self {
         Self {
             renderer: None,
-            world: World::new(),
+            world: World::new()
         }
     }
 }
@@ -50,14 +49,20 @@ impl ApplicationHandler<Renderer> for Context {
 
         match event {
             WE::CloseRequested => event_loop.exit(),
-            WE::Resized(size) => r.resize(size.width, size.height),
-            WE::RedrawRequested => match r.render() {
-                Ok(_) => {}
-                Err(e) => {
-                    log::error!("{e}");
-                    event_loop.exit();
-                }
+            WE::Resized(size) => {
+                
+                r.resize(size.width, size.height);
             },
+            WE::RedrawRequested => {
+                
+                match r.render() {
+                    Ok(_) => {}
+                    Err(e) => {
+                        log::error!("{e}");
+                        event_loop.exit();
+                    }
+                };
+            }
             WE::KeyboardInput {
                 event:
                     KeyEvent {

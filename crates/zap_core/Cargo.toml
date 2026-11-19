@@ -5,6 +5,8 @@ edition.workspace = true
 version.workspace = true
 
 [dependencies]
+zap_ecs = { workspace = true }
+zap_render = { workspace = true }
 
 anyhow = { workspace = true }
 env_logger = { workspace = true }
